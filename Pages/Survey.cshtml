@@ -1,0 +1,22 @@
+﻿@page
+@model prelab5.Pages.SurveyModel
+@{
+    ViewData["Title"] = "Survey";
+}
+
+<form>
+    <div class="mb-3">
+        <label class="form-label" for="fname">First name:</label>
+        <input class="form-control" type="text" id="fname" name="fname">
+    </div>
+    <div class="mb-3">
+        @foreach (var hobby in Model.Hobbies)
+        {
+            <div class="form-check">
+                <input class="form-check-input" type="checkbox" id="hobby" name="hobby" value="@hobby">
+                <label class="form-check-label" for="hobby">@hobby</label>
+            </div>
+        }
+    </div>
+    <button type="submit" class="btn btn-primary">Submit</button>
+</form>
